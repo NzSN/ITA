@@ -1,8 +1,5 @@
 /* file: Quicksort.cpp */
 
-#include <concepts>
-#include <iostream>
-#include <vector>
 #include <gtest/gtest.h>
 
 template <std::random_access_iterator r_access_iter>
@@ -25,7 +22,7 @@ r_access_iter partition(r_access_iter current, r_access_iter last) {
 
 template <std::random_access_iterator r_access_iter>
 void quick_sort(r_access_iter begin, r_access_iter last) {
-    if (!(last > begin))
+    if (begin >= last)
         return;
     r_access_iter mid = partition(begin, last);
     quick_sort(begin, mid-1);
